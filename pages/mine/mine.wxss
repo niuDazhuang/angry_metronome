@@ -1,0 +1,65 @@
+/* pages/mine/mine.wxss */
+page {
+  background: #f6f6f6;
+}
+.header {
+  background: #FF9C35;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.left {
+  display: flex;
+}
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.label {
+  margin-left: 20rpx;
+}
+.rank {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.setting {
+  margin-right: 20rpx;
+}
+
+.content {
+  background: #fff;
+  padding: 20rpx 20rpx 40rpx;
+  color: #333;
+  font-size: 24rpx;
+}
+.title {
+  font-size: 28rpx;
+}
+.tab {
+  margin-top: 20rpx;
+}
+.tab-label {
+  margin-left: 40rpx;
+}
+
+.call {
+  margin-top:40rpx;
+  font-size:14px;
+  color:blue;
+  text-align: center;
+}
+.call-label {
+  border-bottom:1px solid blue;
+}
+.time {
+  text-align: center;
+  margin-top:20rpx;
+}
+.time-label {
+  font-size: 24rpx;
+  color:#E2E2E2;
+}

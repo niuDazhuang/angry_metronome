@@ -1,0 +1,10 @@
+<!--pages/order/list/list.wxml-->
+<view>
+   <view class='go-center' style="margin-top:100px">
+      <i class="iconfont icon-dingdan dindgan-i" ></i>
+   </view>
+   <view class='go-center note-btn'>暂无订单~</view>
+   <view class='go-center' style='margin-top:20px' >
+     <view class='go-center down-center start-btn' bindtap='golist'>开始点餐</view>
+   </view>
+</view>

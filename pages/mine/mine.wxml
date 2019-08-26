@@ -1,0 +1,31 @@
+<!--pages/mine/mine.wxml-->
+<view class="header">
+  <view class="left">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    <view class="label">
+      <view>{{nickName}}</view>
+      <view class="rank">积分等级</view>
+    </view>
+  </view>
+  <view class="right">
+    <label class="setting">设置</label>
+  </view>
+</view>
+
+<view class="content">
+  <view class="title">
+    <label>我的记录</label>
+  </view>
+  <view class="tab">
+    <label class="tab-label">消费记录</label>
+    <label class="tab-label">储值记录</label>
+    <label class="tab-label">积分记录</label>
+  </view>
+</view>
+
+<view class="call" bindtap="bitphone">
+    <label class="call-label">客服电话：123-456-7890</label>
+</view>
+<view class="time">
+  <label class="time-label">[服务时间 周一至周五 9:00-19:00]</label>
+</view>

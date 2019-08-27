@@ -6,20 +6,19 @@
     </view>
   </view>
   <!-- 右侧菜单 -->
-  <scroll-view scroll-y="true" style='height:1000rpx;' bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-    <view class="content" id="a{{index}}" wx:for="{{listData}}" wx:key="unique">
-      <view class='list-tab'>{{item.name}}</view>
-      <view class='content-list' wx:for="{{item.foods}}" wx:key="unique" wx:for-item="items" wx:for-index="indexs">
+  <scroll-view scroll-y="true" style='height:1000rpx;' scroll-into-view="{{toView}}">
+    <view class="content">
+      <view class='list-tab'>{{listData[activeIndex].name}}</view>
+      <view class='content-list' wx:for="{{listData[activeIndex].foods}}" wx:key="unique">
         <view class='list-image-box'>
-          <image class="list-image" mode="widthFix" src='{{items.image_url}}'></image>
+          <image class="list-image" mode="widthFix" src="{{'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=702646376,425900975&fm=27&gp=0.jpg'}}"></image>
         </view>
         <view class='issue-name'>
-          <view>{{items.name}}</view>
+          <view>{{item.name}}</view>
           <view style='margin-top:20rpx;color:#F05A86'>
-            ¥ {{items.specfoods[0].price}}.00
-            <i class="iconfont icon-jiahao2fill plus-icon" data-type="{{index}}" data-index="{{indexs}}" bindtap="selectInfo"></i>
+            ¥ {{item.specfoods[0].price}}.00
+            <i class="iconfont icon-jiahao2fill plus-icon" data-type="{{activeIndex}}" data-index="{{index}}" bindtap="selectInfo"></i>
           </view>
-
         </view>
       </view>
     </view>
@@ -76,7 +75,6 @@
     </label>
   </view>
   <scroll-view scroll-y="true" class="{{cartList.length>5?'cart-scroll-list':''}}">
-
     <view class='cart-list-box' wx:for="{{cartList}}" wx:key="unique" style='border-bottom:1px #E3E3E3 solid'>
       <view class='list-info'>
         <view>{{item.name}}</view>

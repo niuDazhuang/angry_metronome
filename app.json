@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/list/list",
+    "pages/index/index",
     "pages/mine/mine",
     "pages/order/balance/balance",
     "pages/order/list/list",
@@ -10,7 +10,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#FF9C35",
-    "navigationBarTitleText": "gogoop",
+    "navigationBarTitleText": "all member",
     "navigationBarTextStyle":"white"
   },
     "tabBar": {
@@ -21,7 +21,7 @@
         {
           "selectedIconPath": "images/home_s.png",
           "iconPath": "images/home.png",
-          "pagePath": "pages/list/list",
+          "pagePath": "pages/index/index",
           "text": "点餐"
         },
         {

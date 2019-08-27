@@ -4,28 +4,83 @@
     <image class="avatar" src="{{avatarUrl}}"></image>
     <view class="label">
       <view>{{nickName}}</view>
-      <view class="rank">积分等级</view>
+      <view class="rank">成长值：{{growValue}}</view>
     </view>
   </view>
   <view class="right">
-    <label class="setting">设置</label>
+    <label class="setting">当前门店：{{restaurant}}</label>
   </view>
 </view>
 
-<view class="content">
-  <view class="title">
-    <label>我的记录</label>
-  </view>
-  <view class="tab">
-    <label class="tab-label">消费记录</label>
-    <label class="tab-label">储值记录</label>
-    <label class="tab-label">积分记录</label>
-  </view>
+<view class="tab">
+  <label
+    wx:for="{{['门店会员', '消费记录', '储值记录', '积分记录']}}"
+    wx:key="unique"
+    class="tab-label {{tabIndex === index ? 'active' : ''}}"
+    data-index="{{index}}"
+    bindtap="onTabTap"
+  >
+    {{item}}
+  </label>
 </view>
 
-<view class="call" bindtap="bitphone">
-    <label class="call-label">客服电话：123-456-7890</label>
-</view>
-<view class="time">
-  <label class="time-label">[服务时间 周一至周五 9:00-19:00]</label>
-</view>
+<scroll-view scroll-y="true" style="height: 466px;">
+  <view class="tab-pane" wx:if="{{tabIndex === 0}}">
+    <view class="tab-pane-row" wx:for="{{member}}" wx:key="unique">
+      <view class="tab-pane-row_left">
+        <view>{{item.name}}</view>
+        <view>{{item.rank}}</view>
+      </view>
+      <view class="tab-pane-row_right">
+        <view>成长值：{{item.grow}}</view>
+        <view>积分：{{item.points}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab-pane" wx:if="{{tabIndex === 1}}">
+    <view class="tab-pane-row" wx:for="{{8}}" wx:key="unique">
+      <view class="tab-pane-row_left">
+        <view>oppo茶饮</view>
+        <view>星空薄荷*1</view>
+      </view>
+      <view class="tab-pane-row_right">
+        <view>￥13.00</view>
+        <view>2020-01-01</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab-pane" wx:if="{{tabIndex === 2}}">
+    <view class="tab-pane-row" wx:for="{{10}}" wx:key="unique">
+      <view class="tab-pane-row_left">
+        <view>oppo茶饮</view>
+      </view>
+      <view class="tab-pane-row_right">
+        <view>￥100.00</view>
+        <view>2020-01-01</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab-pane" wx:if="{{tabIndex === 3}}">
+    <view class="tab-pane-row">
+      <view class="tab-pane-row_left">
+        <view>oppo茶饮</view>
+      </view>
+      <view class="tab-pane-row_right">
+        <view>+100</view>
+        <view>2020-01-01</view>
+      </view>
+    </view>
+    <view class="tab-pane-row">
+      <view class="tab-pane-row_left">
+        <view>oppo茶饮</view>
+      </view>
+      <view class="tab-pane-row_right">
+        <view>-50</view>
+        <view>2020-01-01</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

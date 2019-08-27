@@ -1,3 +1,6 @@
+view {
+  box-sizing: border-box;
+}
 /**app.wxss**/
 .container {
   height: 100%;

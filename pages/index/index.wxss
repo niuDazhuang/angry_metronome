@@ -12,13 +12,11 @@
 .list-left-menu-box-unselect{
   padding:10rpx;
   border-bottom:1px solid #E3E3E3;
-  height:72rpx;
   color: #6C6C6C;
   background:#F9F9F9;
 }
 .list-left-menu-box-selected{
   padding:10rpx;
-  height:72rpx;
   color: #FF9C35;
   border-left:3px solid #FF9C35;
   background:white;
@@ -33,12 +31,14 @@
 }
 .list-menu-name{
   text-align: center;
-  margin-top:14rpx;
+  line-height: 80rpx;
 }
 .list-image-box{
   width:160rpx;
-  height:72px;
   text-align: center;
+}
+.list-image-box image {
+  height: 80rpx;
 }
 .content-list{
   margin-left:160rpx;

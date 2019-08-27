@@ -8,7 +8,6 @@ Page({
     listData: [],
     activeIndex: 0,
     toView: 'a0',
-    scrollTop: 100,
     screenWidth: 667,
     showModalStatus: false,
     currentType: 0,
@@ -61,31 +60,10 @@ Page({
   },
   selectMenu: function (e) {
     var index = e.currentTarget.dataset.index
-    console.log(index)
     this.setData({
       activeIndex: index,
-      toView: 'a' + index,
-      // scrollTop: 1186
+      toView: 'a' + index
     })
-    console.log(this.data.toView);
-  },
-  scroll: function (e) {
-    var dis = e.detail.scrollTop
-    for (let i = 0; i < this.data.scrollArr.length; i++) {
-      if (i < this.data.scrollArr.length - 1) {
-        if (dis > this.data.scrollArr[i] && dis < this.data.scrollArr[i + 1]) {
-          console.log(i)
-          this.setData({
-            activeIndex: i,
-          })
-          break;
-        }
-      } else {
-        this.setData({
-          activeIndex: this.data.scrollArr.length - 1,
-        })
-      }
-    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -107,24 +85,19 @@ Page({
     var index = e.currentTarget.dataset.index;
     var type = e.currentTarget.dataset.type;
     if (type == 0) {
-      this.setData({
-        sizeIndex: index
-      });
+      this.setData({ sizeIndex: index });
     }
     if (type == 1) {
-      this.setData({
-        sugarIndex: index
-      });
+      this.setData({ sugarIndex: index });
     }
     if (type == 2) {
-      this.setData({
-        temIndex: index
-      });
+      this.setData({ temIndex: index });
     }
   },
 
   addToCart: function () {
     var a = this.data
+    console.log(a)
     var addItem = {
       "name": a.listData[a.currentType].foods[a.currentIndex].name,
       "price": a.listData[a.currentType].foods[a.currentIndex].specfoods[0].price,
